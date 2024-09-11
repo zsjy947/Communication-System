@@ -1,0 +1,12 @@
+TOP.v端口说明及引脚绑定
+sys_clk：系统时钟
+sys_clk_rst：时钟单独设置复位信号，这个只复位时钟分频模块
+rst：复位其余模块
+bit_in：调制之后经过信道输入FPGA的比特流，需要外接示波器
+bit_out：调制之后从FPGA中输出的比特流，需要外接示波器
+data_trans：信号发生器产生的8bit数据，需要外接到LED上
+en_hamming_code：编码后的16bit，高2位是1，不用外接和绑定引脚
+de_hamming_code：输入解码器的14bit，已经去掉了头部2位1，不用外接和绑定引脚
+data_recev：解码之后的8bit数据，需要外接到LED上
+
+※实际上板的时候可能需要修改clk_div中的fsk_div参数从而看见低频的LED变化，仿真不用
